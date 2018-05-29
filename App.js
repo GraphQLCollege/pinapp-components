@@ -18,7 +18,7 @@ export class App extends React.Component {
           addPin={this.props.addPin}
         />
         <LoginPage authenticate={this.props.authenticate} />
-        <VerifyPage verify={this.props.verify} onToken={this.props.onToken} />
+        <VerifyPage verify={this.props.verify}  />
         <ProfilePage
           user={this.props.user}
           authenticated={this.props.authenticated}
@@ -33,6 +33,5 @@ export class App extends React.Component {
 App.defaultProps = {
   authenticate: () => Promise.resolve({}),
   verify: () => Promise.resolve({}),
-  onToken: () => Promise.resolve({}),
   logout: () => Promise.resolve({})
 };
