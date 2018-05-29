@@ -1,0 +1,32 @@
+.pinapp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.pinapp-nav button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  margin: 12px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.pinapp-nav .auth-banner {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  max-width: 100%;
+}
