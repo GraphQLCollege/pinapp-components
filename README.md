@@ -2,9 +2,17 @@
 
 React components used in the example application of the book [GraphQL Webapps](https://graphql.college/graphql-webapps).
 
+## Installation
+
+`yarn add pinapp-components` or `npm install pinapp-components --save`
+
+## Playground
+
 This library's components belong to a Pinterest clone called PinApp. See how each component looks like in the [playground](https://graphqlcollege.github.io/pinapp-components/index.html).
 
 ![PinApp](./pinapp_login.png)
+
+## Components API
 
 GraphQL Webapps uses this components as the view layer of a client server application developed using NodeJS, Apollo Server and React Apollo.
 
