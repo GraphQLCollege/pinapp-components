@@ -28,6 +28,7 @@
     "build-storybook": "build-storybook",
     "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development webpack --watch",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "deploy": "storybook-to-ghpages"
   }
 }
