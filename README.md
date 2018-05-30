@@ -8,7 +8,7 @@ React components used in the example application of the book [GraphQL Webapps](h
 
 ## Playground
 
-This library's components belong to a Pinterest clone called PinApp. See how each component looks like in the [playground](https://graphqlcollege.github.io/pinapp-components/index.html).
+This library's components belong to a Pinterest clone called PinApp. See how each component looks like in the [playground](https://graphqlcollege.github.io/pinapp-components).
 
 ![PinApp](./pinapp_login.png)
 
