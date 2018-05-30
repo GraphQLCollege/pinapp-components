@@ -52,4 +52,55 @@ This is the list of all components. Most of them correspond to URLs from PinApp:
     * `authenticated`: Boolean
     * `logout`: Function that will run when the user clicks "Logout". It does not receive any arguments.
 
+## Example usage
+
 To see example usage, open `stories/index.stories.js`.
+
+```js
+import {
+  Container,
+  PinListPage,
+  AddPinPage,
+  LoginPage,
+  VerifyPage,
+  ProfilePage,
+  Nav
+} from "../";
+
+class App extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      pins: props.pins || [],
+      authenticated: props.authenticated || false
+    };
+  }
+  render() {
+    return (
+      <Container noRouter={this.props.noRouter}>
+        <PinListPage pins={this.state.pins} />
+        <AddPinPage
+          authenticated={this.state.authenticated}
+          addPin={pin => {
+            this.setState(({ pins }) => ({ pins: pins.concat([pin]) }));
+          }}
+        />
+        <LoginPage authenticate={this.props.authenticate} />
+        <VerifyPage
+          verify={() =>
+            this.props
+              .verify()
+              .then(token => this.setState({ authenticated: true }))
+          }
+        />
+        <ProfilePage
+          user={this.props.user}
+          authenticated={this.state.authenticated}
+          logout={this.props.logout}
+        />
+        <Nav authenticated={this.state.authenticated} />
+      </Container>
+    );
+  }
+}
+```

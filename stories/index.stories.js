@@ -5,7 +5,15 @@ import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 import { MemoryRouter } from "react-router-dom";
 
-import { App as PinApp } from "../App";
+import {
+  Container,
+  PinListPage,
+  AddPinPage,
+  LoginPage,
+  VerifyPage,
+  ProfilePage,
+  Nav
+} from "../";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,19 +25,29 @@ class App extends React.Component {
   }
   render() {
     return (
-      <PinApp
-        {...this.props}
-        pins={this.state.pins}
-        addPin={pin => {
-          this.setState(({ pins }) => ({ pins: pins.concat([pin]) }));
-        }}
-        verify={() =>
-          this.props
-            .verify()
-            .then(token => this.setState({ authenticated: true }))
-        }
-        authenticated={this.state.authenticated}
-      />
+      <Container noRouter={this.props.noRouter}>
+        <PinListPage pins={this.state.pins} />
+        <AddPinPage
+          authenticated={this.state.authenticated}
+          addPin={pin => {
+            this.setState(({ pins }) => ({ pins: pins.concat([pin]) }));
+          }}
+        />
+        <LoginPage authenticate={this.props.authenticate} />
+        <VerifyPage
+          verify={() =>
+            this.props
+              .verify()
+              .then(token => this.setState({ authenticated: true }))
+          }
+        />
+        <ProfilePage
+          user={this.props.user}
+          authenticated={this.state.authenticated}
+          logout={this.props.logout}
+        />
+        <Nav authenticated={this.state.authenticated} />
+      </Container>
     );
   }
 }
