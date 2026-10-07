@@ -1,6 +1,6 @@
 # PinApp components
 
-React components used in the example application of the book [GraphQL Webapps](https://graphql.college/graphql-webapps).
+React components used in the example application of the book [Fullstack GraphQL](https://graphqlcollege.github.io/fullstack-graphql/).
 
 ## Installation
 
